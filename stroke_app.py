@@ -16,7 +16,7 @@ import pandas as pd
 # In[7]:
 
 
-print(df.info())
+# print(df.info())
 print(df.isnull().sum())
 
 
