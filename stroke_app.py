@@ -6,7 +6,7 @@ import pickle
 model = pickle.load(open("stroke_nb_model.pkl", "rb"))
 
 st.title("🧠 Stroke Prediction App")
-st.markdown("Enter your health and lifestyle information below.")
+st.markdown("Enter your health and lifestyle information below:")
 
 # --- User Inputs ---
 gender = st.selectbox("Gender", ["Male", "Female"])
@@ -18,11 +18,11 @@ work_type = st.selectbox("Work Type", ["Private", "Self-employed", "Govt_job", "
 residence_type = st.selectbox("Residence Type", ["Urban", "Rural"])
 smoking_status = st.selectbox("Smoking Status", ["never smoked", "formerly smoked", "smokes", "Unknown"])
 
-# --- Glucose ---
+# --- Glucose Level ---
 st.markdown("### Average Glucose Level")
 know_glucose = st.checkbox("I don't know my glucose level")
 if know_glucose:
-    glucose = 106.15  # Replace with your dataset's average if needed
+    glucose = 106.15  # You can update this based on your actual dataset
     st.info(f"Using average glucose level: {glucose}")
 else:
     glucose = st.number_input("Enter your average glucose level", 40.0, 300.0)
@@ -37,7 +37,7 @@ if know_bmi:
     bmi = round(weight / (height_m ** 2), 2) if height_m > 0 else 0
     st.info(f"Calculated BMI: {bmi}")
 else:
-    bmi = st.number_input("Enter your BMI", 10.0, 60.0)
+    bmi = st.number_input("Enter your BMI directly", 10.0, 60.0)
 
 # --- Encode Inputs ---
 gender_val = 1 if gender == "Male" else 0
@@ -59,6 +59,7 @@ smoke_map = {
     "smokes": 2,
     "Unknown": 3
 }
+
 work_type_val = work_map[work_type]
 smoking_val = smoke_map[smoking_status]
 
