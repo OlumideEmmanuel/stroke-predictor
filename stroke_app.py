@@ -10,7 +10,7 @@ import pandas as pd
 # In[6]:
 
 
-df = pd.read_csv(r'C:\Users\User\Desktop\MY PROJECT WORK\healthcare-dataset-stroke-data.csv')
+# df = pd.read_csv(r'C:\Users\User\Desktop\MY PROJECT WORK\healthcare-dataset-stroke-data.csv')
 
 
 # In[7]:
