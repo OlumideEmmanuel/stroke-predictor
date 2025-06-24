@@ -17,19 +17,19 @@ import pandas as pd
 
 
 # print(df.info())
-print(df.isnull().sum())
+# print(df.isnull().sum())
 
 
 # In[8]:
 
 
-df = df.drop(columns=['id'], errors='ignore')
+# df = df.drop(columns=['id'], errors='ignore')
 
 
 # In[9]:
 
 
-df['bmi'] = df['bmi'].fillna(df['bmi'].median())
+# df['bmi'] = df['bmi'].fillna(df['bmi'].median())
 
 
 # In[10]:
@@ -42,14 +42,14 @@ from sklearn.preprocessing import LabelEncoder
 
 
 categorical_cols = ['gender', 'ever_married', 'work_type', 'Residence_type', 'smoking_status']
-df[categorical_cols] = df[categorical_cols].apply(LabelEncoder().fit_transform)
+# df[categorical_cols] = df[categorical_cols].apply(LabelEncoder().fit_transform)
 
 
 # In[12]:
 
 
-X = df.drop('stroke', axis=1)
-y = df['stroke']
+# X = df.drop('stroke', axis=1)
+# y = df['stroke']
 
 
 # In[13]:
